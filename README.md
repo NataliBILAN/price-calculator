@@ -1,46 +1,55 @@
-# Getting Started with Create React App
+# Price Calculator App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Getting Started
 
-In the project directory, you can run:
+To run this project locally, follow these steps:
 
-### `npm start`
+### Frontend Setup
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+1. Navigate into the project directory:
+   cd price-calculator
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+2. Install dependencies: Run the following command to install all the required dependencies:
+   npm install
 
-### `npm test`
+3. Run the application:
+   npm start
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The app will be accessible at http://localhost:3000 in your browser.
 
-### `npm run build`
+### Backend Setup
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+This project requires a separate server to be run locally. You can find the backend repository here and clone it - https://github.com/uturn-now/fe-assignment-pc-server.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. Navigate into the project directory:
+   cd fe-assignment-pc-server-main
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. Install dependencies: Run the following command to install all the required dependencies:
+   npm install
 
-### `npm run eject`
+3. Run the server:
+   npm run start
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+The server should now be up and running on http://localhost:9099.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Environment Variables
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Ensure that the frontend is correctly pointing to the server running at http://localhost:9099. This may be done through environment variables (e.g., REACT_APP_API_URL) in the frontend project.
+Create a .env file in the root of frontend project and add this variable for development mode:
+REACT_APP_API_URL=http://localhost:9099
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Additional Questions
 
-## Learn More
+1. **What could have helped you in making the assignment?**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+While the API was clearly documented in Swagger, I focused primarily on the Price Calculator component. However, there was no explicit mention that all form fields were required. The input fields for 'start', 'delivery', and 'end' locations had a placeholder labeled "Search", which implied the need for an autocomplete feature and an additional API to search predefined locations.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+2. **What would you have done differently if you had more time?**
+
+If I had more time, I would have focused on refining the design by integrating a UI kit into the theme for consistent and polished styling. I would also improve the app's structure by breaking down the larger components into smaller, more reusable components. Additionally, I would implement better error handling throughout the app to improve user experience.
+
+3. **If you didn’t add tests, what kind of tests would you add if you had more time?**
+
+I would add unit tests for the utility functions and React components to ensure correctness.
